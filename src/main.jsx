@@ -5,7 +5,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider } from './context/ThemeContext.jsx';
 import './App.css';
 createRoot(document.getElementById('root')).render(
-<BrowserRouter>
+<BrowserRouter basename='/midify'>
   <AuthProvider>
     <ThemeProvider>
       <App />
