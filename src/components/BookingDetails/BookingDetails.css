@@ -1,0 +1,66 @@
+.booking-detail-page {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background-color: #fefefe;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  color: #2c3e50;
+}
+
+.booking-detail-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #34495e;
+}
+
+.booking-info {
+  background-color: #ecf0f1;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px #d0d7de;
+  margin-bottom: 30px;
+}
+
+.booking-info h3 {
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+  color: #2980b9;
+  font-weight: 700;
+  text-align: center;
+}
+
+.booking-info p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+.booking-info strong {
+  color: #34495e;
+}
+
+.go-back {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #2980b9;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(41, 128, 185, 0.4);
+  user-select: none;
+}
+
+.go-back:hover {
+  background-color: #1c5980;
+  box-shadow: 0 6px 12px rgba(28, 89, 128, 0.6);
+}
+
+.error {
+  color: #e74c3c;
+  font-weight: 700;
+  text-align: center;
+}

@@ -1,0 +1,34 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-brand .accent {
+  color: #E45A84;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-item {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-item:hover {
+  color: #E45A84;
+}

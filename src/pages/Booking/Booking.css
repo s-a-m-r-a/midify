@@ -1,0 +1,119 @@
+.booking-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  min-height: calc(100vh - 140px);
+}
+
+.booking-page h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.booking-page form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.booking-page label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.booking-page input[type="date"],
+.booking-page select {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.booking-page input[type="date"]:focus,
+.booking-page select:focus {
+  outline: none;
+  border-color: rgba(132, 134, 238, 0.6);
+}
+
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.seat {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.seat:hover:not(.booked):not(.selected) {
+  background: rgba(132, 134, 238, 0.3);
+}
+
+.seat.selected {
+  background: rgba(132, 134, 238, 0.8);
+  border-color: rgba(132, 134, 238, 0.4);
+}
+
+.seat.booked {
+  background: rgba(255, 82, 82, 0.4);
+  border-color: rgba(255, 82, 82, 0.2);
+  cursor: not-allowed;
+}
+
+.select-seats h3 {
+  font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.confirm-btn {
+  padding: 1rem;
+  background: rgba(132, 134, 238, 0.8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background: rgba(132, 134, 238, 0.9);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .booking-page {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .seat {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .booking-page {
+    margin: 1.5rem;
+  }
+}

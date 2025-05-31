@@ -1,0 +1,93 @@
+.mybookings-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  min-height: calc(100vh - 70px);
+  color: white;
+}
+
+.mybookings-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.bookings-list {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.booking-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  gap: 1rem;
+}
+
+.booking-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.booking-item p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.detail-btn, .cancel-btn {
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.detail-btn {
+  background: rgba(132, 134, 238, 0.8);
+  color: white;
+  border: 1px solid rgba(132, 134, 238, 0.4);
+}
+
+.cancel-btn {
+  background: rgba(255, 82, 82, 0.8);
+  color: white;
+  border: 1px solid rgba(255, 82, 82, 0.4);
+}
+
+.detail-btn:hover, .cancel-btn:hover {
+  transform: translateY(-2px);
+}
+
+.detail-btn:hover {
+  background: rgba(132, 134, 238, 0.9);
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 82, 82, 0.9);
+}
+
+@media (max-width: 767px) {
+  .mybookings-page {
+    padding: 1rem;
+  }
+
+  .booking-item {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .mybookings-page {
+    margin: 1rem;
+  }
+}
