@@ -49,7 +49,7 @@ export default function ChangePassword() {
       />
       <button onClick={handleChangePassword}>Update Password</button>
       {message && <p style={{color: "green"}}>✔ {message}</p>}
-      {errMsg && <p style={{color: "red"}}>❌ {errMsg}</p>}
+      {errMsg && <p style={{color: "red"}}>❌ <b>{errMsg}</b></p>}
     </div>
   );
 }

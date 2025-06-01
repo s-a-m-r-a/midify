@@ -15,7 +15,7 @@ export default function Movies() {
       .catch((err) => console.error("Movie details fetch error:", err));
   }, [id]);
 
-  if (!movie) return <div className="movie-details">Loading...</div>;
+  if (!movie) return <div className="movie-details">Loading..</div>;
 
   const imdbUrl = movie.imdb_id
     ? `https://www.imdb.com/title/${movie.imdb_id}`
@@ -33,7 +33,7 @@ export default function Movies() {
           <strong>📅 Release Date:</strong> {movie.release_date}
         </p>
         <p>
-          <strong>Rating:</strong> {movie.vote_average} ⭐
+          <strong>⭐ IMDb Rating:</strong> {movie.vote_average}
         </p>
         <p>
           <strong>📃 Overview:</strong> {movie.overview}

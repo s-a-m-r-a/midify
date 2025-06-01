@@ -10,10 +10,10 @@ export default function MovieItem({ movie }) {
   return (
     <div className="movie-card">
       <div className="movie-card__image">
-        <img src={imgPath} alt={movie.title} loading="lazy" />
+        <img src={imgPath} alt={movie.title} title={movie.title} loading="lazy" />
         <div className="movie-card__overlay">
           <div className="movie-buttons">
-            <Link to={`/movies/${movie.id}`} className="details-btn">
+            <Link to={`/movies/${movie.id}`} className="details-btn" aria-label={`More details about ${movie.title}`}>
               <Info size={18} />
               <span>Details</span>
             </Link>

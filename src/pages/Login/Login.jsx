@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
@@ -25,6 +26,12 @@ export default function Login() {
     user,
   } = useAuth();
 
+  useEffect(() => {
+  if (user) {
+    navigate("/");
+  }
+}, [user, navigate]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErr("");
@@ -48,7 +55,7 @@ export default function Login() {
           return;
         }
         toast.success("Logged in successfully!");
-        setTimeout(() => navigate("/"), 2000);
+        setTimeout(() => navigate("/"), 1800);
       }
     } catch (error) {
       setErr(error.message);
@@ -104,7 +111,9 @@ export default function Login() {
   return (
     <div className="login-page">
       <div className="login">
-        <ToastContainer />
+        <ToastContainer
+  position="top-center"
+/>
         <h2>{isSignup ? "Create Account" : "Login"}</h2>
 
         <form onSubmit={handleSubmit}>

@@ -33,17 +33,19 @@
 
 .navbar__content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  flex-grow: 1;
   gap: 2rem;
 }
 
 .navbar__links {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 2.5rem;
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar__links li a {
@@ -84,6 +86,7 @@
 
 .navbar__auth {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 1rem;
 }
@@ -127,24 +130,6 @@
   background: rgba(79, 70, 229, 0.15);
 }
 
-.theme-toggle {
-  background: none;
-  border: none;
-  color: #8486ee;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.theme-toggle:hover {
-  color: #4f46e5;
-  background: rgba(79, 70, 229, 0.1);
-}
-
 .navbar__mobile-buttons {
   display: none;
 }
@@ -165,10 +150,6 @@
 .menu-btn:hover {
   color: #4f46e5;
   background: rgba(79, 70, 229, 0.1);
-}
-
-.theme-toggle.desktop {
-  display: flex;
 }
 
 @media (max-width: 767px) {
@@ -220,10 +201,6 @@
     width: 100%;
   }
 
-  .theme-toggle.desktop {
-    display: none;
-  }
-
   .auth-link {
     width: 100%;
     justify-content: center;
@@ -241,5 +218,62 @@
 @media (min-width: 425px) and (max-width: 767px) {
   .navbar__content {
     padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar__logo a {
+    font-size: 1.6rem;
+  }
+
+  .navbar__content {
+    gap: 1.5rem;
+  }
+
+  .navbar__links {
+    gap: 2rem;
+  }
+
+  .navbar__links li a {
+    font-size: 1rem;
+  }
+
+  .auth-link,
+  .logout-btn {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .navbar {
+    padding: 1rem 3.5rem;
+  }
+
+  .navbar__logo a {
+    font-size: 1.7rem;
+  }
+
+  .navbar__content {
+    gap: 2rem;
+  }
+
+  .navbar__links {
+    gap: 2.5rem;
+  }
+
+  .navbar__links li a {
+    font-size: 1.05rem;
+  }
+
+  .auth-link,
+  .logout-btn {
+    font-size: 1.05rem;
+    padding: 0.5rem 1rem;
   }
 }

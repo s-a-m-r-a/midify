@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import faq from '../../assets/faq.png'
 import './FAQ.css';
 
 export default function FAQ() {
@@ -8,23 +9,23 @@ export default function FAQ() {
   const faqs = [
     {
       question: "How do I book movie tickets?",
-      answer: "You can book tickets by browsing our movie selection, choosing your preferred movie, and clicking the 'Book Now' button. Select your preferred date, time, and seats, then confirm your booking."
+      answer: "You can select your preferred date, time, and seats, then confirm your booking."
     },
     {
       question: "Can I cancel my booking?",
-      answer: "Yes, you can cancel your booking through the 'My Bookings' section. Please note that cancellations are subject to our cancellation policy."
+      answer: "According to our cancellation policy,  you have the right to cancel your booking only within 24 hours."
     },
     {
-      question: "How many seats can I book at once?",
-      answer: "You can book up to 5 seats per transaction. For larger group bookings, please contact our customer service."
+      question: "How much is a ticket?",
+      answer: "Opening special: All tickets are $10. Also, you can book up to 5 seats per session."
     },
     {
       question: "What payment methods do you accept?",
-      answer: "We accept all major credit/debit cards, digital wallets, and online banking transfers."
+      answer: "At the moment, we accept all major credit/debit cards and cash."
     },
     {
-      question: "How do I get my tickets?",
-      answer: "Once your booking is confirmed, you'll receive an email with your e-tickets. You can also find your tickets in the 'My Bookings' section."
+      question: "How do I pay for my tickets?",
+      answer: "Online payment is currently under maintenance. You can pay at the cinema hall by payment methods provided above after your booking is confirmed."
     }
   ];
 
@@ -35,7 +36,7 @@ export default function FAQ() {
   return (
     <div className="faq-page">
       <div className="faq-container">
-        <h1>FAQ</h1>
+        <h1><img src={faq} alt="FAQ"/> FAQ</h1>
         <div className="faq-list">
           {faqs.map((faq, index) => (
             <div 

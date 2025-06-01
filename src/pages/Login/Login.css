@@ -207,13 +207,99 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 424px) {
   .login {
-    width: 85%;
-    padding: 1.75rem;
+    width: 90%;
+    padding: 1.5rem;
   }
 
   .login h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .login input,
+  .login button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+
+  .forgot-link,
+  .toggle-text,
+  .divider span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .login {
+    margin: 2rem;
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .login h2 {
+    font-size: 1.6rem;
+  }
+
+  .login input,
+  .login button {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .forgot-link,
+  .toggle-text,
+  .divider span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .login {
+    width: 80%;
+    margin: 3rem;
+    max-width: 500px;
+    padding: 2.5rem;
+  }
+
+  .login h2 {
+    font-size: 1.75rem;
+  }
+
+  .login input,
+  .login button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .forgot-link,
+  .toggle-text,
+  .divider span {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .login {
+    margin: 4rem;
+    width: 60%;
+    max-width: 500px;
+    padding: 2.75rem;
+  }
+
+  .login h2 {
+    font-size: 1.85rem;
+  }
+
+  .login input,
+  .login button {
+    font-size: 1.05rem;
+    padding: 0.85rem;
+  }
+
+  .forgot-link,
+  .toggle-text,
+  .divider span {
+    font-size: 1rem;
   }
 }

@@ -1,11 +1,23 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 2rem;
   background-color: #1a1a1a;
   color: white;
   font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .footer-brand {
@@ -15,7 +27,29 @@
 }
 
 .footer-brand .accent {
-  color: #E45A84;
+  color: #8486ee;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #8486ee;
 }
 
 .socials {
@@ -30,5 +64,113 @@
 }
 
 .social-item:hover {
-  color: #E45A84;
+  color: #8486ee;
+}
+
+.security-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.payment-cards {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.card-logo {
+  width: 140px;
+  height: auto;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (min-width:320px) and (max-width: 425px) {
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    align-items: center;
+    min-width: unset;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .payment-cards {
+    justify-content: center;
+  }
+
+  .card-logo {
+    width: 90px;
+  }
+
+  .footer-brand {
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    align-items: center;
+  }
+
+  .payment-cards {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer-content {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1 1 45%;
+  }
+
+  .card-logo {
+    width: 110px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .footer-content {
+    gap: 2.5rem;
+  }
+
+  .footer-section {
+    flex: 1;
+  }
+
+  .card-logo {
+    width: 120px;
+  }
 }

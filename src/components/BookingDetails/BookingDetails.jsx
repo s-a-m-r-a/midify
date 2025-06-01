@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
+
 import "./BookingDetails.css";
 
 export default function BookingDetails() {
@@ -34,7 +35,7 @@ export default function BookingDetails() {
 
   return (
     <div className="booking-detail-page">
-      <h2>🎫 Booking Details</h2>
+      <h2>Booking Details</h2>
       <div className="booking-info">
         <h3>{booking.title}</h3>
         <p><b>Date:</b> {booking.date}</p>
@@ -42,7 +43,7 @@ export default function BookingDetails() {
         <p><b>Number of seats:</b> {booking.seats}</p>
         <p><b>Movie ID:</b> {booking.movieId}</p>
       </div>
-      <Link to="/mybookings" className="go-back">⬅ Go Back</Link>
+      <Link to="/mybookings" className="go-back">Go Back</Link>
     </div>
   );
 }

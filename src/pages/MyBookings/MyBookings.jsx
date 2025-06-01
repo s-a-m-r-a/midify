@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { useAuth } from "../../context/AuthContext";
 import { updateDoc, doc } from "firebase/firestore";
-import {Album} from 'lucide-react';
+import Bookings from '../../assets/bookings.png'
 import "./MyBookings.css";
 
 export default function MyBookings() {
@@ -62,7 +62,7 @@ const handleCancel = async (bookingId) => {
 
   return (
     <div className="mybookings-page">
-      <h2><Album size={28}/> My Bookings</h2>
+      <h2><img src={Bookings} alt="My Bookings"/> My Bookings</h2>
 
       {bookings.length === 0 ? (
         <div>You haven't made any bookings yet.</div>
@@ -79,7 +79,7 @@ const handleCancel = async (bookingId) => {
       <Link to={`/booking-details/${booking.id}`} className="detail-btn">Booking Details</Link>
 
       <button className="cancel-btn" onClick={() => handleCancel(booking.id)}>
-        Cancel ❌
+        Cancel
       </button>
     </li>
   ))}

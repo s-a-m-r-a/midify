@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase";
+import { CalendarCheck } from 'lucide-react';
+import Ticket from '../../assets/ticket.png';
 import {
   collection,
   addDoc,
@@ -181,7 +183,7 @@ export default function Booking() {
 
   return (
     <div className="booking-page">
-      <h2>🎟️ Book Tickets for: {movie.title}</h2>
+      <h2><img src={Ticket} alt="Ticket"/> Book Tickets for: {movie.title}</h2>
       <form onSubmit={(e) => e.preventDefault()}>
         <label>
           Select Date:
@@ -196,7 +198,7 @@ export default function Booking() {
 
         <label>
           Select Time:
-          <select value={time} onChange={(e) => setTime(e.target.value)} required>
+          <select name="time" value={time} onChange={(e) => setTime(e.target.value)} required>
             <option value="">-- Choose Time --</option>
             <option value="12:00">12:00 PM</option>
             <option value="15:00">3:00 PM</option>
@@ -211,7 +213,7 @@ export default function Booking() {
         </div>
 
         <button className="confirm-btn" onClick={handleBooking}>
-          Confirm Booking
+         <CalendarCheck size={22} style={{ position: "relative" , top:"4px", marginRight: '6px' }} />Confirm Booking
         </button>
       </form>
     </div>

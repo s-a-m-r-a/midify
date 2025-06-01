@@ -30,6 +30,7 @@
 }
 
 .user-profile button {
+  font-size: 1rem;
   background: rgba(132, 134, 238, 0.8);
   color: white;
   border: none;
@@ -38,11 +39,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
-}
-
-.user-profile button:hover {
-  background: rgba(132, 134, 238, 0.9);
-  transform: translateY(-2px);
 }
 
 .input-wrapper {
@@ -98,10 +94,16 @@
 
 .save-btn {
   background: rgba(132, 134, 238, 0.8);
+  font-size: 1rem;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 .save-btn:disabled {
-  background: rgba(255, 255, 255, 0.2);
+  background: #a19f9f;
   cursor: not-allowed;
 }
 
@@ -109,18 +111,91 @@
   background: rgba(255, 82, 82, 0.8);
 }
 
-@media (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 424px) {
   .profile-page {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .user-profile {
     padding: 1.5rem;
+  }
+
+  .user-profile h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-profile p {
+    font-size: 1rem;
+  }
+
+  .input-wrapper input {
+    font-size: 0.95rem;
+  }
+
+  .user-profile button,
+  .save-btn,
+  .cancel-btn {
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
   }
 }
 
 @media (min-width: 425px) and (max-width: 767px) {
   .profile-page {
     padding: 1.5rem;
+  }
+
+  .user-profile {
+    padding: 1.8rem;
+  }
+
+  .user-profile h2 {
+    font-size: 1.8rem;
+  }
+
+  .user-profile p {
+    font-size: 1.05rem;
+  }
+
+  .input-wrapper input {
+    font-size: 1rem;
+  }
+
+  .user-profile button,
+  .save-btn,
+  .cancel-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .user-profile {
+    max-width: 600px;
+    padding: 2.5rem;
+  }
+
+  .user-profile h2 {
+    font-size: 2rem;
+  }
+
+  .user-profile p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .user-profile {
+    max-width: 650px;
+    padding: 2.5rem 3rem;
+  }
+
+  .user-profile h2 {
+    font-size: 2.2rem;
+  }
+
+  .user-profile p {
+    font-size: 1.2rem;
   }
 }

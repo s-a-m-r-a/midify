@@ -74,7 +74,7 @@ export default function Profile() {
       return {
         icon: faInfoCircle,
         text: "Username must be different from the previous one.",
-        color: "blue",
+        color: "#5586f7",
       };
     return {
       icon: faCircleCheck,

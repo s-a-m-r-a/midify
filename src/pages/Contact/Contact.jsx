@@ -36,7 +36,7 @@ export default function Contact() {
               </div>
               <div className="contact-item">
                 <MapPin size={20} />
-                <span>123 Movie Street, Cinema City, CC 12345</span>
+                <span>803 Movie St, Midify Cinema Hall</span>
               </div>
             </div>
           </div>
