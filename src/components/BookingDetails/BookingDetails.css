@@ -3,7 +3,7 @@ body {
 }
 
 .booking-detail-page {
-  max-width: 500px;
+  max-width: 800px;
   margin: 40px auto;
   padding: 25px 30px;
   background: rgba(255, 255, 255, 0.25);
@@ -74,7 +74,7 @@ body {
 
 @media (min-width: 320px) and (max-width: 424px) {
   .booking-detail-page {
-    margin: 20px 10px;
+    margin: 20px;
     padding: 20px 16px;
   }
 
@@ -127,8 +127,8 @@ body {
 @media (min-width: 768px) and (max-width: 1024px) {
   .booking-detail-page {
     margin: 40px auto;
-    padding: 28px;
-    max-width: 600px;
+    padding: 44px;
+    max-width: 700px;
   }
 
   .booking-detail-page h2 {

@@ -78,7 +78,7 @@ const handleCancel = async (bookingId) => {
 
       <Link to={`/booking-details/${booking.id}`} className="detail-btn">Booking Details</Link>
 
-      <button className="cancel-btn" onClick={() => handleCancel(booking.id)}>
+      <button className="cancel-btn2" onClick={() => handleCancel(booking.id)}>
         Cancel
       </button>
     </li>
