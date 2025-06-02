@@ -13,6 +13,12 @@ export default function ChangePassword() {
   const handleChangePassword = async () => {
   setMessage("");
   setErrMsg("");
+
+  if (currentPassword === newPassword) {
+    setErrMsg("New password should be different from the current one.");
+    return;
+  }
+
   try {
     await doPasswordChange(currentPassword, newPassword);
     setMessage("Password successfully updated!");
@@ -48,8 +54,10 @@ export default function ChangePassword() {
         onChange={(e) => setNewPassword(e.target.value)}
       />
       <button onClick={handleChangePassword}>Update Password</button>
-      {message && <p style={{color: "green"}}>✔ {message}</p>}
-      {errMsg && <p style={{color: "red"}}>❌ <b>{errMsg}</b></p>}
+      {message && <p style={{color: "#7bd17b", background: "rgba(255, 0, 0, 0.05)", borderRadius: "6px", 
+        backdropFilter: "blur(5px)", padding: "8px 12px"}}>✔ <b>{message}</b></p>}
+      {errMsg && <p style={{color: "#fca5a5", background: "rgba(255, 0, 0, 0.05)", borderRadius: "6px", 
+        backdropFilter: "blur(5px)", padding: "8px 12px"}}>❌ <b>{errMsg}</b></p>}
     </div>
   );
 }

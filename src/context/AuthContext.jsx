@@ -51,6 +51,8 @@ export const AuthProvider = ({ children }) => {
     await setDoc(doc(db, "users", res.user.uid), {
       email,
       username,
+      createdAt: new Date(),
+      uid: res.user.uid,
     });
     await sendEmailVerification(res.user);
     return res;
@@ -67,6 +69,7 @@ export const AuthProvider = ({ children }) => {
       {
         username: result.user.displayName || "",
         email: result.user.email,
+        lastLogin: new Date(),
       },
       { merge: true }
     );

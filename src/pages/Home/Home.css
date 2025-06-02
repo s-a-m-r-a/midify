@@ -53,8 +53,6 @@ body{
   color: #ccc;
 }
 
-
-/* Small devices */
 @media (min-width: 320px) and (max-width: 424px) {
   .home-container h2 {
     font-size: 1.5rem;
@@ -71,7 +69,6 @@ body{
   }
 }
 
-/* Medium devices */
 @media (min-width: 425px) and (max-width: 767px) {
   .home-container h2 {
     font-size: 1.75rem;
@@ -86,14 +83,12 @@ body{
   }
 }
 
-/* Tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
   .movies-list {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 }
 
-/* Large desktops */
 @media (min-width: 1200px) {
   .home-container {
     padding: 3rem 2rem;

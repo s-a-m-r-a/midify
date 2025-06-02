@@ -23,12 +23,17 @@ export default function Login() {
     doSignInWithEmailAndPassword,
     doSignInWithGoogle,
     doPasswordReset,
+    doSignOut,
     user,
   } = useAuth();
 
   useEffect(() => {
   if (user) {
-    navigate("/");
+    if (user.emailVerified) {
+      navigate("/");
+    } else {
+      toast.info("Please verify your email before logging in.");
+    }
   }
 }, [user, navigate]);
 
@@ -40,13 +45,13 @@ export default function Login() {
 
     try {
       if (isSignup) {
-        const res = await doCreateUserWithEmailAndPassword(email, password);
-        await setDoc(doc(db, "users", res.user.uid), {
-          username: username,
-          email: res.user.email,
-        });
+        const res = await doCreateUserWithEmailAndPassword(email, password, username);
         toast.success("Account created successfully! Please verify your email.");
         setInfoMsg("A verification email has been sent. Please check your inbox.");
+
+        await doSignOut();
+        setLoading(false);
+        return;
       } else {
         const res = await doSignInWithEmailAndPassword(email, password);
         if (!res.user.emailVerified) {
@@ -74,6 +79,7 @@ export default function Login() {
       await setDoc(doc(db, "users", userGoogle.uid), {
         username: userGoogle.displayName || "",
         email: userGoogle.email,
+        lastLogin: new Date(),
       }, { merge: true });
       toast.success("Logged in with Google!");
       setTimeout(() => navigate("/"), 1500);
@@ -131,6 +137,9 @@ export default function Login() {
             <input
               type="text"
               placeholder="Username"
+              name="username"
+              minLength={5}
+              maxLength={10}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required

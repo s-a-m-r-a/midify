@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebase";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { useAuth } from "../../context/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,27 +18,21 @@ import ChangePassword from "../../components/ChangePassword/ChangePassword";
 import "./Profile.css";
 
 export default function Profile() {
-  const { user } = useAuth();
+  const { user, userData } = useAuth();
   const [username, setUsername] = useState("");
   const [initUsername, setInitUsername] = useState("");
   const [edit, setEdit] = useState(false);
 
   const minLen = 5;
   const maxLen = 10;
-
+  
   useEffect(() => {
-    const fetchProfile = async () => {
-      if (!user) return;
-      const docRef = doc(db, "users", user.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        const fetchedUsername = docSnap.data().username || "";
-        setUsername(fetchedUsername);
-        setInitUsername(fetchedUsername);
-      }
-    };
-    fetchProfile();
-  }, [user]);
+    // console.log("userData:", userData);
+    if (userData?.username) {
+      setUsername(userData.username);
+      setInitUsername(userData.username);
+    }
+  }, [userData]);
 
   const handleUpdate = async () => {
     try {

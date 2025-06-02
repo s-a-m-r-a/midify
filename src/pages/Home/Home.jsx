@@ -8,13 +8,21 @@ import "./Home.css";
 export default function Home() {
   const [query, setQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');
+  const [hasSearched, setHasSearched] = useState(false);
   const [movies, setMovies] = useState([]);
 
   const fetchMovies = async () => {
   let url = "";
+  const trimmedQuery = query.trim();
 
-  if (query) {
-    url = `https://api.themoviedb.org/3/search/movie?api_key=5b6aa098ca6a50e070ed4a4bbe11e49e&language=en-US&query=${query}`;
+  if (trimmedQuery && trimmedQuery.length < 3) {
+    alert("Please enter at least 3 characters to search.");
+    setMovies([]);
+    return;
+  }
+
+  if (trimmedQuery) {
+    url = `https://api.themoviedb.org/3/search/movie?api_key=5b6aa098ca6a50e070ed4a4bbe11e49e&language=en-US&query=${trimmedQuery}`;
   } else if (selectedGenre) {
     url = `https://api.themoviedb.org/3/discover/movie?api_key=5b6aa098ca6a50e070ed4a4bbe11e49e&language=en-US&with_genres=${selectedGenre}`;
   } else {
@@ -22,16 +30,24 @@ export default function Home() {
   }
 
   try {
+
     const res = await fetch(url);
     const data = await res.json();
 
     let results = data.results;
 
-    if (query && selectedGenre) {
+    if (trimmedQuery && selectedGenre) {
       results = results.filter(movie =>
         movie.genre_ids.includes(Number(selectedGenre))
       );
     }
+
+    results = results.filter(movie =>
+      movie.poster_path &&
+      movie.release_date &&
+      movie.vote_average &&
+      movie.title
+    );
 
     setMovies(results);
   } catch (err) {
@@ -50,6 +66,7 @@ export default function Home() {
 
 
   const handleSearch = () => {
+    setHasSearched(true); 
     fetchMovies();
   };
 
@@ -68,11 +85,10 @@ export default function Home() {
               <MovieItem key={movie.id} movie={movie} />
             ))
           ) : (
-            <div className="not-found">Movie not found.</div>
-          )}
+            hasSearched && <div className="not-found">Movie not found.</div>
+            )}
+            </div>
         </div>
-      </div>
-
       <Footer />
     </>
   );
